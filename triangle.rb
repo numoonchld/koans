@@ -13,14 +13,21 @@
 # and
 #   about_triangle_project_2.rb
 #
+
+
+
+
 def triangle(a, b, c)
   # WRITE THIS CODE
-  if a == b and b == c and c == a
+  if (a+b <= c) or (b+c <= a) or (c+a <= b)
+    raise TriangleError, "Length Criteria for making a Triangle fail"
+  elsif a == b and b == c and c == a
     return :equilateral
   elsif (a == b ) or (b == c) or (c == a)
     return :isosceles
   elsif a != b and b != c and c != a
     return :scalene
+  
   end
 end
 
